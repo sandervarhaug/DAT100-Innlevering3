@@ -33,8 +33,13 @@ public class Bilde extends Tekst {
 
 	// Metoden nedenfor er kun for valgfri oppgave 6
 	public String toHTML() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+
+        String tekstDel = super.toHTML();
+
+
+        tekstDel = tekstDel.substring(0, tekstDel.lastIndexOf("\t\t<hr>\n"));
+
+        return tekstDel + "\t\t<iframe src=\"" + url + "\" height=600 width=800></iframe><hr>\n";
 				
 	}
 }
